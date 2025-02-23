@@ -5,7 +5,8 @@ import { existsSync } from 'fs';
 @Injectable()
 export class FilesService {
   getStaticFile(file: string) {
-    const path = join(__dirname, '../../static/uploads', file);
+    // Este path es donde estan los archivos estaticos y solo para los products
+    const path = join(__dirname, '../../static/products', file);
 
     if (!existsSync(path)) {
       throw new BadRequestException(`File ${file} not found`);
